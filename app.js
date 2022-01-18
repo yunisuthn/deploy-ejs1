@@ -5,13 +5,22 @@ const bodyParser = require("body-parser");
 const route = require("./public/route.js");
 const PORT = process.env.PORT || 8080;
 const methodOverride = require("method-override");
+const { google } = require("googleapis");
 
 app.use(methodOverride("X-HTTP-Method"));
 app.use(methodOverride("X-HTTP-Method-Override"));
 app.use(methodOverride("X-Method-Override"));
 app.use(methodOverride("_method"));
 
-app.use(express.static(__dirname + "/public"));
+// Fichier static a utiliser
+app.use(express.static("public"));
+// app.use("/css", express.static(__dirname + "public/css"));
+// View de type html
+app.engine("html", require("ejs").renderFile);
+app.set("view engine", "html");
+app.set("views", __dirname + "/public");
+
+//app.use(express.static(__dirname + "/public"));
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
