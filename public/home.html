@@ -12,15 +12,17 @@
     <h1 id="filename"></h1>
     <h1>HOME</h1>
     <object id="show" data="" width="100%" height="800px"></object>
-    <form method="post" action="/next">
+    <form id='forms' method="get">
         <button>Next</button>
     </form>
 
 </body>
 <script>
-    console.log("var ");
     var url = '<%= obj %>';
+    var next = '<%= next %>';
+    console.log(next);
     document.getElementById("show").setAttribute('data', url);
+    document.getElementById("forms").setAttribute('action', next);
 </script>
 
 </html>
