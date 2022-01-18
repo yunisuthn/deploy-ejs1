@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CHOOSING COUNTRY</title>
 </head>
 
 <body>
-    HOME
-    <form action="/home" method="get">
-        <button type="submit">check</button>
+    <h1>CHOOSE A COUNTRY WHAT YOU WANT</h1>
+    <label for="cars">Choose a country:</label>
+    <form action="/getCountry" method="post">
+        <select name="country" id="country">
+            <option value="None" selected>None</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Algerie">Algerie</option>
+            <option value="Gambie">Gambie</option>
+        </select>
+        <button type="submit">CHOOSE</button>
     </form>
 </body>
 
